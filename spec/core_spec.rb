@@ -86,11 +86,11 @@ module Anemone
         pages << FakePage.new('0', :links => ['1?foo=1', '2'])
         pages << FakePage.new('1?foo=1')
         pages << FakePage.new('2')
-        
+
         core = Anemone.crawl(pages[0].url, @opts) do |a|
           a.skip_query_strings = true
         end
-        
+
         core.should have(2).pages
       end
 

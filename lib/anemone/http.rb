@@ -169,7 +169,7 @@ module Anemone
         http.verify_mode = OpenSSL::SSL::VERIFY_NONE
       end
 
-      @connections[url.host][url.port] = http.start 
+      @connections[url.host][url.port] = http.start
     end
 
     def verbose?
