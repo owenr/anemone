@@ -51,7 +51,7 @@ module Anemone
           @store.should respond_to(:[])
           @store.should respond_to(:[]=)
 
-          @store[@url] = @page 
+          @store[@url] = @page
           @store[@url].url.should == URI(@url)
         end
 
@@ -79,7 +79,7 @@ module Anemone
           pages = urls.map { |url| Page.new(URI(url)) }
           urls.zip(pages).each { |arr| @store[arr[0]] = arr[1] }
 
-          (@store.keys - urls).should == [] 
+          (@store.keys - urls).should == []
         end
 
         it "should implement each" do
@@ -91,7 +91,7 @@ module Anemone
 
           result = {}
           @store.each { |k, v| result[k] = v }
-          (result.keys - urls).should == [] 
+          (result.keys - urls).should == []
           (result.values.map { |page| page.url.to_s } - urls).should == []
         end
 
